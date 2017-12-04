@@ -95,7 +95,7 @@ def sum_more_cosines(m, n):
          which is approximately 0.02082.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -107,6 +107,13 @@ def sum_more_cosines(m, n):
     #   Reason: To ensure that you get more practice using variables.
     # ------------------------------------------------------------------
 
+    total = 0
+
+    for k in range(n + 1 - m):
+        add = math.cos(k + m)
+        total = total + add
+
+    return total
 
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
