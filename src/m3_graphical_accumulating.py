@@ -199,7 +199,7 @@ def draw_lines(n, point, window):
 
     for k in range(n):
         interval = 200/n
-        end_y = end_y + (k * interval)
+        end_y = end_y + (k *interval)
         end = rg.Point(end_x, end_y)
         line = rg.Line(start, end)
         line.attach_to(window)
