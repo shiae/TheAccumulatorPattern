@@ -114,7 +114,7 @@ def sum_from(m, n):
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT:  Your solution MUST
@@ -126,10 +126,10 @@ def sum_from(m, n):
     # ------------------------------------------------------------------
 
     total = 0
-
-    for k in range(n + 1 - m):
-        total = total + 1
-
+    i = n + 1 - m
+    for k in range(i):
+        total = total + k
+    total = total + (i * m)
     return total
 
 def run_test_factorial():
