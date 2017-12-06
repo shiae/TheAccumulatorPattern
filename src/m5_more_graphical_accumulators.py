@@ -118,6 +118,7 @@ def draw_squares_from_circle(n, circle, window):
     center_y = center.y
 
     for k in range(n):
+        new
         center = rg.Point(center_x, center_y)
         side_length = 2 * circle.radius
         square = rg.Square(center, side_length)
