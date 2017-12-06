@@ -196,13 +196,20 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # ------------------------------------------------------------------
 
+    total = 1
+
+    for k in range(n):
+        thing = n - k
+        total = total * thing
+
+    return total
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
