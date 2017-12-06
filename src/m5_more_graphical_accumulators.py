@@ -27,8 +27,8 @@ import rosegraphics as rg
 # ----------------------------------------------------------------------
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_squares_from_circle()
-    run_test_draw_circles_from_rectangle()
+    # run_test_draw_squares_from_circle()
+    # run_test_draw_circles_from_rectangle()
     run_test_draw_lines_from_rectangles()
 
 
@@ -380,6 +380,43 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    center1 = rectangle1.get_center()
+    center2 = rectangle2.get_center()
+
+    low_left = rectangle1.get_lower_left_corner()
+
+    distance_x = low_left.x - center1.x
+    distance_y = low_left.y - center1.y
+
+    line1 = rg.Line(center1, center2)
+    line1.thickness = 5
+    line1.color = rectangle1.outline_color
+    line1.attach_to(window)
+
+    end_y = center2.y + distance_y
+    end_x = center2.x + distance_x
+    end = rg.Point(end_x, end_y)
+
+    start = low_left
+
+    line2 = rg.Line(start, end)
+    line2.thickness = 5
+    line2.color = rectangle2.outline_color
+    line2.attach_to(window)
+
+    window.render()
+
+    for _ in range():
+        line = rg.Line(start, end)
+        line.attach_to(window)
+        window.render()
+
+
+
 
 
 # ----------------------------------------------------------------------
