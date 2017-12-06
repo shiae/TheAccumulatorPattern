@@ -193,6 +193,7 @@ def run_test_draw_circles_from_rectangle():
 
     window2.close_on_mouse_click()
 
+
 def draw_circles_from_rectangle(m, n, rectangle, window):
     """
     What comes in:  Four arguments:
@@ -255,26 +256,35 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     fill_color = rectangle.fill_color
     outline_color = rectangle.outline_color
 
-    for k in range(m):
-        radius = height/2
+    radius1 = height / 2
+    row_center_x = rec_center_x - width / 2 - radius1
+
+    radius2 = width / 2
+    column_center_y = rec_center_y - height / 2 - radius2
+
+    for _ in range(m):
         rectangle.attach_to(window)
-        row_center_x = rec_center_x - (k * height) - width/2 - radius
+
         row_center_y = rec_center_y
         row_center = rg.Point(row_center_x, row_center_y)
 
-        circle_row = rg.Circle(row_center, radius)
+        circle_row = rg.Circle(row_center, radius1)
         circle_row.fill_color = fill_color
         circle_row.attach_to(window)
 
-    for k in range(n):
-        radius = width/2
+        row_center_x = row_center_x - height
+
+    for _ in range(n):
         column_center_x = rec_center_x
-        column_center_y = rec_center_y - (k * width) - height/2 - radius
+
         column_center = rg.Point(column_center_x, column_center_y)
-        circle_column = rg.Circle(column_center, radius)
+        circle_column = rg.Circle(column_center, radius2)
         circle_column.outline_color = outline_color
         circle_column.attach_to(window)
         window.render()
+
+        column_center_y = column_center_y - width
+
 
 def run_test_draw_lines_from_rectangles():
     """ Tests the   draw_lines_from_rectangles  function. """
