@@ -244,6 +244,32 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    rectangle_center = rectangle.get_center()
+    rec_center_x = rectangle_center.x
+    rec_center_y = rectangle_center.y
+    height = rectangle.get_height()
+    width = rectangle.get_width()
+    fill_color = rectangle.fill_color
+    outline_color = rectangle.outline_color
+
+    for k in range():
+        rectangle.attach_to(window)
+        row_center_x = rec_center_x + (k * height)
+        row_center_y = rec_center_y
+        row_center = rg.Point(row_center_x, row_center_y)
+        radius = height/2
+        circle_row = rg.Circle(row_center, radius)
+        circle_row.fill_color = fill_color
+        circle_row.attach_to(window)
+
+        radius = width
+        column_center_x = rec_center_x
+        column_center_y = rec_center_y - (k * width)
+        column_center = rg.Point(column_center_x, column_center_y)
+        circle_column = rg.Circle(column_center, radius)
+        circle_column.outline_color = outline_color
+        circle_column.attach_to(window)
+        window.render()
 
 def run_test_draw_lines_from_rectangles():
     """ Tests the   draw_lines_from_rectangles  function. """
