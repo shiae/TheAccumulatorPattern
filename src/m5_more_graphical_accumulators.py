@@ -124,6 +124,7 @@ def draw_squares_from_circle(n, circle, window):
         square.attach_to(window)
         window.render()
 
+
 def run_test_draw_circles_from_rectangle():
     """ Tests the   draw_circles_from_rectangle  function. """
     print()
@@ -171,6 +172,8 @@ def run_test_draw_circles_from_rectangle():
     rectangle.outline_color = 'red'
     rectangle.outline_thickness = 3
     draw_circles_from_rectangle(8, 3, rectangle, window1)
+
+    window1.close_on_mouse_click()
 
     # ------------------------------------------------------------------
     # A third test on ANOTHER window.
@@ -230,7 +233,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
